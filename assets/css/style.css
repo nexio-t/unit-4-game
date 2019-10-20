@@ -1,0 +1,20 @@
+.button {
+    height: 100px; 
+    width: auto;
+    float: left;
+}
+
+input {
+    height: 100px; 
+    width: auto;
+    float: left;
+
+}
+
+p {
+    font-size: 12pt; 
+}
+
+.score {
+    clear: both; 
+}
