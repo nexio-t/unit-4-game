@@ -28,25 +28,43 @@ function resetGame () {
         return computerNum = Math.floor(Math.random() * (max - min) + min);
     }
     generateCompNum(19, 121); 
-    console.log(computerNum); 
+    console.log("Computer Guess:" + computerNum); 
+
+    //set innerHTML to computer number 
+
+    $(".computerGuess").text(computerNum); 
 
     // generate new score for buttons
     button1 = Math.floor(Math.random() * 12) + 1;
     button2 = Math.floor(Math.random() * 12) + 1;
     button3 = Math.floor(Math.random() * 12) + 1;
     button4 = Math.floor(Math.random() * 12) + 1;
-    console.log(button2); 
 
-    
+    console.log("button1: " + button1); 
+    console.log("button2: " + button2); 
+    console.log("button3: " + button3); 
+    console.log("button4: " + button4); 
+
+    // set button values to random value 
+    $("input.button1").val(button1); 
+    $("input.button2").val(button2); 
+    $("input.button3").val(button3); 
+    $("input.button4").val(button4); 
 }
 
+// DELETE Function call below 
+resetGame(); 
     
-    // set inner HTML to computer number 
-    // set inner HTML to all four butotns 
-
 // press enter to intiate game 
+var keyPressed = e.keyCode; 
 
-    // call reset game function 
+if (keyPressed == 13) {
+    
+    resetGame(); 
+
+    $(".getStarted").hide(); 
+
+}
 
     // on click 
         // if button 1, then display innerhtml for value 
