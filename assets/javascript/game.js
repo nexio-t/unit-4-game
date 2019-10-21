@@ -14,11 +14,14 @@ var lossCounter;
 var userNum; 
 
 // button variables 
-
 var button1; 
 var button2; 
 var button3; 
 var button4; 
+
+// user score
+
+var userScore = 0; 
 
 // reset game function 
 function resetGame () {
@@ -56,15 +59,40 @@ function resetGame () {
 resetGame(); 
     
 // press enter to intiate game 
-var keyPressed = e.keyCode; 
+$(document).keyup(function(e) {
 
-if (keyPressed == 13) {
+    var keyPressed = e.keyCode; 
+
+    if (keyPressed == 13) {
     
-    resetGame(); 
+        resetGame(); 
+    
+        $(".getStarted").hide(); 
+    }
 
-    $(".getStarted").hide(); 
+    $(".button1").on("click", function() {
+        userScore += button1; 
+        console.log("userScore updated "+ userScore);
+        $("#yourScore").text(userScore); 
+    }); 
 
-}
+    $(".button2").on("click", function() {
+        userScore += button2; 
+        $("#yourScore").text(userScore); 
+    }); 
+
+    $(".button3").on("click", function() {
+        userScore += button3; 
+        $("#yourScore").text(userScore); 
+    }); 
+
+    $(".button4").on("click", function() {
+        userScore += button4; 
+        $("#yourScore").text(userScore); 
+    }); 
+
+}); 
+
 
     // on click 
         // if button 1, then display innerhtml for value 
