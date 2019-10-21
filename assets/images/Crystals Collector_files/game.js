@@ -53,13 +53,12 @@ function resetGame () {
     $("input.button3").val(button3); 
     $("input.button4").val(button4); 
 
-    // clear user score text field
-    $("#yourScore").empty(); 
-
-    // set user score to zero
-    userScore = 0; 
+    // clear user score 
+    $(".score").empty(); 
 }
 
+// DELETE Function call below 
+resetGame(); 
     
 
 $(document).keyup(function(e) {
@@ -110,7 +109,7 @@ $(document).keyup(function(e) {
                 $("#winsCounter").text(winCounter); 
     
                 // call reset game (delay by two seconds)
-                setTimeout(function() { resetGame(); }, 500);
+                setTimeout(function() { resetGame(); }, 1000);
             }; 
     
             if (userScore > computerNum) {
@@ -122,7 +121,7 @@ $(document).keyup(function(e) {
                 $("#lossCounter").text(lossCounter); 
     
                 // call reset game (delay by two seconds)
-                setTimeout(function() { resetGame(); }, 500);
+                setTimeout(function() { resetGame(); }, 1000);
             }; 
         }); 
 

@@ -11,11 +11,10 @@ input {
 
 }
 
-.scorePara {
+p {
     font-size: 12pt; 
-    clear: both;
 }
 
-#yourPara {
+.scorePara {
     clear: both; 
 }
